@@ -1,7 +1,7 @@
-## TTA
+## app
 1. React / Firebase App
 
-## Tweets
+## cron
 1. Files for EC2 instance that runs cronjob getting latest tweets and adding to Firebase
 
 ## Ignored Files
