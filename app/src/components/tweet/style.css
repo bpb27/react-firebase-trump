@@ -1,0 +1,35 @@
+.highlight {
+  background: yellow;
+}
+
+.tweet {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.tweet div, .tweet p {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.tweet div:first-child {
+  min-width: 30px;
+}
+
+.tweet div:nth-child(2) {
+  min-width: 200px;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+
+.tweet div:last-child {
+
+}
+
+@media all and (max-width: 900px) {
+  .tweet, .tweet div {
+    display: block;
+  }
+}

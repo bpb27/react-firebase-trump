@@ -1,0 +1,28 @@
+{
+  "name": "tta",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "firebase": "^4.8.1",
+    "firestore": "^1.1.6",
+    "moment": "^2.20.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1",
+    "react-redux": "^5.0.6",
+    "react-render-html": "^0.6.0",
+    "react-scripts": "1.0.17",
+    "react-visibility-sensor": "^3.11.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "twitter": "^1.7.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy-functions": "firebase deploy --only functions"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "auth != null",
+    "tweets": {
+      "25073877": {
+        ".indexOn": [
+          "year"
+        ]
+      }
+    }
+  }
+}
