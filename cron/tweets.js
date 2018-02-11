@@ -48,7 +48,8 @@ function getLatest (screenName, callback) {
           text: tweet['full_text'] || tweet['text'],
           retweet_count: tweet['retweet_count'],
           favorite_count: tweet['favorite_count'],
-          year: tweet['created_at'].split(' ')[5]
+          year: tweet['created_at'].split(' ')[5],
+          source: tweet['source'].split('>')[1].split('<')[0],
         }
         return hash;
       }, {});

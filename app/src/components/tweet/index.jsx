@@ -22,27 +22,28 @@ class Tweet extends Component {
   }
 
   formatCount (num) {
-    return num;
-    // return num > 999 ? (num/1000).toFixed(1) + 'k' : num
+    return num > 999 ? (num/1000).toFixed(1) + 'k' : num;
   }
 
   render () {
     const { created_at, favorite_count, id_str, retweet_count, source, text } = this.props.data;
     return (
       <div className="tweet" key={id_str}>
-        <div>
+        <div className="index">
           {this.props.index + 1}.
         </div>
-        <div>
-          <p>{moment(created_at).format('MMM Do YYYY, h:mm:ss a')}</p>
+        <div className="metadata">
+          <p className="date">{moment(created_at).format('MMM Do YYYY, h:mm:ss a')}</p>
           <br/>
-          <p>{source}</p>
+          <p className="source">{source}</p>
           <br/>
-          <p>
-            <FontAwesome name='retweet'/> {this.formatCount(retweet_count)} <FontAwesome name='heart-o'/> {this.formatCount(favorite_count)} <FontAwesome name='twitter'/>
+          <p className="stats">
+            <span><FontAwesome name='retweet'/> {this.formatCount(retweet_count)}</span>
+            <span><FontAwesome name='heart-o'/> {this.formatCount(favorite_count)}</span>
+            <span><a href={`https://twitter.com/realDonaldTrump/status/${id_str}`} target="_blank" rel="noopener noreferrer"><FontAwesome name='twitter'/></a></span>
           </p>
         </div>
-        <div>
+        <div className="text">
           <p>{this.transformText(text)}</p>
         </div>
       </div>

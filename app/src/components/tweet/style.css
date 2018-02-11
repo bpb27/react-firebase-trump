@@ -14,17 +14,21 @@
   padding: 0;
 }
 
-.tweet div:first-child {
+.tweet .index {
   min-width: 30px;
 }
 
-.tweet div:nth-child(2) {
+.tweet .metadata {
   min-width: 200px;
   margin-bottom: 5px;
   font-size: 0.8rem;
 }
 
-.tweet div:last-child {
+.tweet .metadata .stats > span {
+  margin-right: 10px;
+}
+
+.tweet .text {
 
 }
 

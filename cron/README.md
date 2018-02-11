@@ -20,3 +20,6 @@
 ## Add Cronjob
 1. `crontab -e`
 2. `* * * * * ~/.nvm/versions/node/v6.11.5/bin/node /home/ec2-user/tweets.js`
+
+## Upload File
+1. `-i trump.pem scp tweets.js ec2-user@ec2-54-175-100-39.compute-1.amazonaws.com:/home/ec2-user/tweets.js`
