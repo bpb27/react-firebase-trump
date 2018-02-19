@@ -1,6 +1,7 @@
 .query {
   background: white;
   border-bottom: 2px solid black;
+  display: inline-flex;
   left: 0;
   position: fixed;
   top: 36px;
@@ -21,7 +22,8 @@
   background: #c5c5c5;
   border-right: 2px solid black;
   color: white;
-  flex: 0 0 80px;
+  flex: 0 0 100px;
+  min-width: 100px;
   text-align: center;
 }
 
@@ -29,4 +31,10 @@
   border: 0;
   flex: 1 1 auto;
   outline: none;
+}
+
+@media all and (max-width: 500px) {
+  .query input {
+    width: 100%;
+  }
 }

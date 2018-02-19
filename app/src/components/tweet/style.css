@@ -28,8 +28,14 @@
   margin-right: 10px;
 }
 
-.tweet .text {
+.tweet .metadata .stats > span:last-child {
+  font-size: 14px;
+}
 
+.tweet .metadata .stats > span:last-child a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
 
 @media all and (max-width: 900px) {

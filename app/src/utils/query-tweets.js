@@ -1,5 +1,5 @@
 export default function (tweets, query) {
   return tweets.filter(tweet => {
-    return query ? tweet.text.includes(query) : true;
+    return query ? tweet.text.toLowerCase().includes(query.toLowerCase()) : true;
   });
 }

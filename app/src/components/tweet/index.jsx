@@ -14,11 +14,13 @@ class Tweet extends Component {
   }
 
   transformText (text) {
-    if (!this.props.query) {
-      return text;
-    } else {
-      return renderHTML(text.replace(this.props.query, `<span className="highlight">${this.props.query}</span>`));
-    }
+    if (!this.props.query) return text;
+
+    const pattern = new RegExp(this.props.query, 'gi');
+    const newText = text.replace(pattern, (matchedText) => {
+      return `<span className="highlight">${matchedText}</span>`
+    });
+    return renderHTML(newText);
   }
 
   formatCount (num) {

@@ -1,11 +1,12 @@
-### ToDo
-1. Think of a good way to cache further (as 2018 collection grows, will become pricier)
-2. Hosting
-3. Recreate app functionality
+## Infrastructure
+1. Host on S3 / CloudFront
+2. Cron that generates new CSV and JSON master each day (and text only versions)
+3. Google Analytics
+4. Think of how to further cache 2018 tweets
 
-### Setup
-1. Need to use firebase cron to automate tweet collection https://github.com/firebase/functions-cron
-2. Function should pull latest 100, and replace any existing ids
-3. App will pull latest tweets from 2018
-4. App will pull cached tweets from S3 (maybe switch back to C-Panel depending on hosting costs)
-5. Add strong cache-controls to static files
+## App Code
+1. Deeper queries
+2. Routing
+3. Latest 15
+4. Highlights
+5. Stats page
