@@ -8,18 +8,19 @@ import './style.css';
 class Tweet extends Component {
 
   static propTypes = {
+    queryList: PropTypes.array.isRequired,
     data: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,
-    query: PropTypes.string.isRequired,
   }
 
-  transformText (text) {
-    if (!this.props.query) return text;
+  highlight (text) {
+    let newText = text;
 
-    const pattern = new RegExp(this.props.query, 'gi');
-    const newText = text.replace(pattern, (matchedText) => {
-      return `<span className="highlight">${matchedText}</span>`
+    this.props.queryList.forEach(keyword => {
+      const pattern = new RegExp(`(${keyword})`, 'gi');
+      newText = newText.replace(pattern, '<span className="highlight">$1</span>');
     });
+
     return renderHTML(newText);
   }
 
@@ -46,7 +47,7 @@ class Tweet extends Component {
           </p>
         </div>
         <div className="text">
-          <p>{this.transformText(text)}</p>
+          <p>{this.highlight(text)}</p>
         </div>
       </div>
     );

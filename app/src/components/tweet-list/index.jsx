@@ -6,15 +6,15 @@ import './style.css';
 class TweetList extends Component {
 
   static propTypes = {
+    queryList: PropTypes.array,
     limit: PropTypes.number,
-    query: PropTypes.string,
     tweets: PropTypes.array,
   }
 
   get tweetsDisplayed () {
     return this.props.tweets
       .slice(0, this.props.limit)
-      .map((tweet, i) => <Tweet key={tweet.id_str} data={tweet} index={i} query={this.props.query}/>);
+      .map((tweet, i) => <Tweet key={tweet.id_str} data={tweet} index={i} queryList={this.props.queryList}/>);
   }
 
   render () {

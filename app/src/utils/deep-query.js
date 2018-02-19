@@ -1,6 +1,10 @@
 
 export function deepQueryObject (query) {
-  return symbolsPresent(query) && createDeepQueryObject(query);
+  if (symbolsPresent(query)) {
+    return createDeepQueryObject(query);
+  } else {
+    return {};
+  }
 }
 
 export function deepQueryParse (deepQuery, text) {

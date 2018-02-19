@@ -1,13 +1,11 @@
-import {deepQueryObject, deepQueryParse} from './deep-query';
+import {deepQueryParse} from './deep-query';
 
-export default function (tweets, query='') {
-  const deepQuery = deepQueryObject(query);
-  console.log(deepQuery);
-
+export default function (tweets, query='', deepQuery) {
+  const hasDeepQuery = Object.keys(deepQuery).length > 0;
   return tweets.filter(tweet => {
     if (!query) {
       return true;
-    } else if (deepQuery) {
+    } else if (hasDeepQuery) {
       return deepQueryParse(deepQuery, tweet.text);
     } else {
       return tweet.text.toLowerCase().includes(query.toLowerCase());
