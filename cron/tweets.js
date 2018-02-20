@@ -36,6 +36,7 @@ function getLatest (screenName, callback) {
       screen_name: screenName,
       trim_user: true,
       tweet_mode: 'extended',
+      // max_id: '950884128379035650',
     };
 
     client.get('statuses/user_timeline', params, (error, tweets, response) => {
@@ -65,7 +66,7 @@ getLatest('realdonaldtrump', (error, tweets) => {
     console.log(error);
     process.exit();
   } else {
-    firebaseAdmin.database().ref(`/tweets/25073877/`).set(tweets).then(() => {
+    firebaseAdmin.database().ref(`/tweets/25073877/`).update(tweets).then(() => {
       process.exit();
     });
   }

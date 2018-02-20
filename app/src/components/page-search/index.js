@@ -12,7 +12,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 class PageSearch extends Component {
 
   static propTypes = {
-    accounts: PropTypes.object,
     tweets: PropTypes.array,
     fetchTweets: PropTypes.func,
     fetchAccounts: PropTypes.func,
@@ -25,9 +24,9 @@ class PageSearch extends Component {
   }
 
   componentDidMount () {
-    if (this.props.tweets.length > 0) return;
+    if (this.props.tweets.length > 100) return;
     this.props.fetchTweets('25073877');
-    this.props.fetchCachedTweets('realdonaldtrump');
+    // this.props.fetchCachedTweets('realdonaldtrump');
   }
 
   loadMore () {
@@ -66,7 +65,7 @@ class PageSearch extends Component {
       <div className="page page-search">
         <Query
           count={this.count}
-          updateQuery={(value) => this.updateQuery(value)}
+          updateQuery={value => this.updateQuery(value)}
         />
         <TweetList
           queryList={this.queryList}

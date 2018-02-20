@@ -16,6 +16,7 @@
 
 .tweet .index {
   min-width: 30px;
+  margin-right: 5px;
 }
 
 .tweet .metadata {
