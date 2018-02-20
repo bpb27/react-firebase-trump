@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.css';
 
 class Navbar extends Component {
@@ -6,9 +7,10 @@ class Navbar extends Component {
   render () {
     return (
       <nav>
-        <div>Trump Twitter Archive</div>
-        <div>Download</div>
-        <div>FAQ</div>
+        <NavLink exact to="/">Home</NavLink>
+        <NavLink to="/archive">Search</NavLink>
+        <NavLink to="/download">Download</NavLink>
+        <NavLink to="/faq">FAQ</NavLink>
       </nav>
     );
   }

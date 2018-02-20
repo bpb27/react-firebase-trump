@@ -4,10 +4,11 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import * as firebase from 'firebase';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers'
-import './index.css'
-import App from './App'
+import { BrowserRouter } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker'
+import rootReducer from './reducers'
+import App from './app'
+import './index.css'
 
 firebase.initializeApp({
   apiKey: "AIzaSyBmHzEI5-chbl16pluOEBTHHfXHpSwcODA",
@@ -25,7 +26,9 @@ const store = createStore(rootReducer, preloadState, composeEnhancers(applyMiddl
 
 render(
   <Provider store={store}>
-    <App/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
