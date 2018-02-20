@@ -1,0 +1,7 @@
+.page-home .content {
+  display: flex;
+}
+
+.page-home .content .left, .page-home .content .right {
+  flex: 1;
+}
