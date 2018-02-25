@@ -1,6 +1,3 @@
-https://firebase.google.com/docs/database/web/read-and-write#update_specific_fields
-writes are overwriting entire ref, not updating
-
 ## SSH
 1. `chmod 400 trump.pem`
 2. `ssh -i trump.pem ec2-user@ec2-54-175-100-39.compute-1.amazonaws.com`

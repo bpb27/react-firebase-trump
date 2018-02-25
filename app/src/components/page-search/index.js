@@ -24,9 +24,8 @@ class PageSearch extends Component {
   }
 
   componentDidMount () {
-    if (this.props.tweets.length > 100) return;
-    this.props.fetchTweets('25073877');
-    // this.props.fetchCachedTweets('realdonaldtrump');
+    if (!this.props.loadedLatest) this.props.fetchTweets('25073877');
+    // if (!this.props.loadedCached) this.props.fetchCachedTweets('realdonaldtrump');
   }
 
   loadMore () {
@@ -82,8 +81,12 @@ class PageSearch extends Component {
 
 }
 
-function mapState ({ tweets }) {
-  return { tweets };
+function mapState ({ app, tweets }) {
+  return {
+    loadedLatest: app.loadedLatestTweets,
+    loadedCached: app.loadedCachedTweets,
+    tweets: tweets
+  };
 }
 
 function mapDispatch (dispatch) {

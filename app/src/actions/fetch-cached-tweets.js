@@ -22,6 +22,7 @@ export default function (username) {
     }, []);
 
     dispatch({ type: Constants.TWEETS, data: cachedTweets });
+    dispatch({ type: Constants.TWEETS_LOADED, data: 'cached' });
 
   };
 };

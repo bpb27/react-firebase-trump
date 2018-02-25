@@ -9,5 +9,6 @@ export default function (userId) {
       .once('value')
 
     dispatch({ type: Constants.TWEETS, data: Object.values(response.val() || {}) });
+    dispatch({ type: Constants.TWEETS_LOADED, data: 'latest' });
   };
 };

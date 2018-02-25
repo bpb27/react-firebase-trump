@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import accounts from './accounts';
+import app from './app';
 import db from './db';
 import tweets from './tweets';
 
-const reducers = combineReducers({ accounts, db, tweets });
+const reducers = combineReducers({ app, db, tweets });
 
 export default reducers
