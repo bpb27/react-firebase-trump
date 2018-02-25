@@ -1,3 +1,13 @@
+.page-home h1 {
+  background: #ff7e7e;
+  color: white;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .page-home .content {
   display: flex;
 }

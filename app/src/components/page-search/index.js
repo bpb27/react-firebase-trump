@@ -25,7 +25,7 @@ class PageSearch extends Component {
 
   componentDidMount () {
     if (!this.props.loadedLatest) this.props.fetchTweets('25073877');
-    // if (!this.props.loadedCached) this.props.fetchCachedTweets('realdonaldtrump');
+    if (!this.props.loadedCached) this.props.fetchCachedTweets('realdonaldtrump');
   }
 
   loadMore () {

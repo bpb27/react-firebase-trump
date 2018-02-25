@@ -4,6 +4,7 @@
 
 .page-download pre {
   background: #f0f0f0;
+  overflow-x: auto;
   padding: 10px;
 }
 

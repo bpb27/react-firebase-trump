@@ -17,7 +17,7 @@ class PageDownload extends Component {
 
   componentDidMount () {
     if (!this.props.loadedLatest) this.props.fetchTweets('25073877');
-    // if (!this.props.loadedCached) this.props.fetchCachedTweets('realdonaldtrump');
+    if (!this.props.loadedCached) this.props.fetchCachedTweets('realdonaldtrump');
   }
 
   downloadCSV ({textOnly}) {
@@ -80,7 +80,7 @@ class PageDownload extends Component {
     return (
       <div className="page page-download">
         <h1>Downloads</h1>
-        <p>Full archive available in JSON or CSV format.</p>
+        <p>Full archive available in JSON or CSV format (15MB)</p>
         <hr/>
         <div className="content">
           <div className="csv">
