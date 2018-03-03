@@ -24,10 +24,12 @@ class PageHome extends Component {
             </div>
           </div>
           <div className="right">
-            <p><Link to="/archive">Search through all 30,000+ tweets</Link></p>
-            <video autoPlay loop>
-              <source src={siteVideo} type="video/mp4" />
-            </video>
+            <div className="video">
+              <p><Link to="/archive">Search through all 30,000+ tweets</Link></p>
+              <video autoPlay loop>
+                <source src={siteVideo} type="video/mp4" />
+              </video>
+            </div>
             <Lists.PersonalSuperlatives/>
             <Lists.KeyIngredient/>
             <Lists.GlobalWarming/>
