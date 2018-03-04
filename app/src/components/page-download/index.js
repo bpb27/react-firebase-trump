@@ -5,7 +5,7 @@ import FileSaver from 'file-saver';
 import fetchTweets from '../../actions/fetch-tweets';
 import fetchCachedTweets from '../../actions/fetch-cached-tweets';
 import toCSV from '../../utils/to-csv';
-import './style.css';
+import './style.scss';
 
 class PageDownload extends Component {
 

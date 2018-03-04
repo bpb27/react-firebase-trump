@@ -1,0 +1,25 @@
+.page-download {
+  margin: 40px;
+
+  pre {
+    background: #f0f0f0;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .download-option {
+    margin-bottom: 40px;
+  }
+
+  button {
+    background: white;
+    border-radius: 3px;
+    border: 2px solid blue;
+    color: blue;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 10px;
+  }
+
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Tweet from '../tweet/'
-import './style.css';
+import './style.scss';
 
 class TweetList extends Component {
 

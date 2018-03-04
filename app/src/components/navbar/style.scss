@@ -9,15 +9,15 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-}
 
-nav a {
-  color: white;
-  cursor: pointer;
-  margin: 5px 10px;
-  text-decoration: none;
-}
+  a {
+    color: white;
+    cursor: pointer;
+    margin: 5px 10px;
+    text-decoration: none;
 
-nav a.active {
-  text-decoration: underline;
+    &.active {
+      text-decoration: underline;
+    }
+  }
 }

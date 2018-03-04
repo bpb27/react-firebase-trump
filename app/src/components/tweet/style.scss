@@ -1,0 +1,51 @@
+.tweet {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  div, p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .index {
+    min-width: 30px;
+    margin-right: 5px;
+  }
+
+  .metadata {
+    min-width: 200px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+
+    .stats {
+      > span {
+        margin-right: 10px;
+
+        &:last-child {
+          font-size: 14px;
+
+          a {
+            text-decoration: none;
+            cursor: pointer;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .text {
+    .highlight {
+      background: yellow;
+    }
+  }
+
+}
+
+@media all and (max-width: 900px) {
+  .tweet, .tweet div {
+    display: block;
+  }
+}

@@ -1,0 +1,41 @@
+.query {
+  background: white;
+  border-bottom: 2px solid black;
+  display: inline-flex;
+  left: 0;
+  position: fixed;
+  top: 36px;
+  width: 100%;
+
+  label, input {
+    display: inline-block;
+    font-size: 25px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  label {
+    background: #c5c5c5;
+    border-right: 2px solid black;
+    color: white;
+    flex: 0 0 100px;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  input {
+    border: 0;
+    flex: 1 1 auto;
+    outline: none;
+  }
+
+  @media all and (max-width: 500px) {
+    input {
+      width: 100%;
+    }
+  }
+
+}

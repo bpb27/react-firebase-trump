@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import renderHTML from 'react-render-html';
 import FontAwesome from 'react-fontawesome';
-import './style.css';
+import './style.scss';
 
 class Tweet extends Component {
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Lists from '../lists';
 import embeddedTweets from '../../utils/twitter-embed';
 import siteVideo from '../../assets/site.mp4';
-import './style.css';
+import './style.scss';
 
 class PageHome extends Component {
 
