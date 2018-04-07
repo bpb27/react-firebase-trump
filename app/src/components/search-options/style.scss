@@ -1,0 +1,25 @@
+.search-options {
+  align-items: center;
+  background: #b1daf7;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  .fa {
+    cursor: pointer;
+  }
+
+  > div {
+    margin: 0 20px;
+  }
+
+  input, select {
+    border: 2px solid black;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 8px;
+    padding: 8px;
+    vertical-align: top;
+  }
+}

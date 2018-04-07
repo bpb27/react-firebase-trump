@@ -6,15 +6,17 @@ import fetchCachedTweets from '../../actions/fetch-cached-tweets';
 import { deepQueryObject } from '../../utils/deep-query';
 import queryTweets from '../../utils/query-tweets';
 import Query from '../query/';
+import SearchOptions from '../search-options/';
 import TweetList from '../tweet-list/';
 import VisibilitySensor from 'react-visibility-sensor';
+import './style.scss';
 
 class PageSearch extends Component {
 
   static propTypes = {
-    tweets: PropTypes.array,
-    fetchTweets: PropTypes.func,
     fetchAccounts: PropTypes.func,
+    fetchTweets: PropTypes.func,
+    tweets: PropTypes.array,
   }
 
   state = {
@@ -66,6 +68,7 @@ class PageSearch extends Component {
           count={this.count}
           updateQuery={value => this.updateQuery(value)}
         />
+        <SearchOptions/>
         <TweetList
           queryList={this.queryList}
           limit={this.state.limit}
@@ -81,7 +84,7 @@ class PageSearch extends Component {
 
 }
 
-function mapState ({ app, tweets }) {
+function mapState ({ app, searchOptions, tweets }) {
   return {
     loadedLatest: app.loadedLatestTweets,
     loadedCached: app.loadedCachedTweets,

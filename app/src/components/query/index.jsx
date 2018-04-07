@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { TOGGLE_SEARCH_OPTIONS } from '../../constants';
 import './style.scss';
 
 class Query extends Component {
 
   static propTypes = {
     count: PropTypes.number.isRequired,
-    updateQuery: PropTypes.func.isRequired
+    toggleSearchOptions: PropTypes.func.isRequired,
+    updateQuery: PropTypes.func.isRequired,
   }
 
   state = {
@@ -31,10 +34,17 @@ class Query extends Component {
           value={this.state.query}
           onChange={(e) => this.handleChange(e.target.value)}
         />
+        <label onClick={() => this.props.toggleSearchOptions()}>Options</label>
       </div>
     );
   }
 
 }
 
-export default Query;
+function mapDispatch (dispatch) {
+  return {
+    toggleSearchOptions: () => dispatch({ type: TOGGLE_SEARCH_OPTIONS }),
+  }
+}
+
+export default connect(null, mapDispatch)(Query);

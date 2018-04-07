@@ -19,11 +19,19 @@
 
   label {
     background: #c5c5c5;
-    border-right: 2px solid black;
     color: white;
     flex: 0 0 100px;
     min-width: 100px;
     text-align: center;
+
+    &:first-child {
+      border-right: 2px solid black;
+    }
+
+    &:last-child {
+      border-left: 2px solid black;
+      cursor: pointer;
+    }
   }
 
   input {

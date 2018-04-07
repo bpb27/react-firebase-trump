@@ -1,3 +1,5 @@
 export const ACCOUNTS = 'ACCOUNTS';
 export const TWEETS = 'TWEETS';
 export const TWEETS_LOADED = 'TWEETS_LOADED';
+export const TOGGLE_SEARCH_OPTIONS = 'TOGGLE_SEARCH_OPTIONS';
+export const TOGGLE_SORT_ORDER = 'TOGGLE_SORT_ORDER';
