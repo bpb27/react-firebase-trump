@@ -6,4 +6,4 @@ import tweets from './tweets';
 
 const reducers = combineReducers({ app, db, searchOptions, tweets });
 
-export default reducers
+export default reducers;
