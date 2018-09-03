@@ -2,13 +2,14 @@ import * as Constants from '../constants';
 
 const tweets = (state = [], action) => {
   if (action.type === Constants.TWEETS) {
-    return unique([...state, ...action.data])
-      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    return unique([...state, ...action.data]).sort(sorting);
   }
   return state;
 }
 
 export default tweets
+
+const sorting = (a, b) => new Date(b.created_at) - new Date(a.created_at);
 
 function unique (list) {
   const newList = [];

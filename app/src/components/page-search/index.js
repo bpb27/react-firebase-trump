@@ -14,9 +14,10 @@ import './style.scss';
 class PageSearch extends Component {
 
   static propTypes = {
-    fetchAccounts: PropTypes.func,
-    fetchTweets: PropTypes.func,
-    tweets: PropTypes.array,
+    ascending: PropTypes.bool.isRequired,
+    fetchAccounts: PropTypes.func.isRequired,
+    fetchTweets: PropTypes.func.isRequired,
+    tweets: PropTypes.array.isRequired,
   }
 
   state = {
@@ -50,7 +51,8 @@ class PageSearch extends Component {
   }
 
   get tweets () {
-    return queryTweets(this.props.tweets, this.state.query, this.state.deepQuery);
+    const tweets = queryTweets(this.props.tweets, this.state.query, this.state.deepQuery);
+    return this.props.ascending ? tweets.reverse() : tweets;
   }
 
   get count () {
@@ -86,6 +88,7 @@ class PageSearch extends Component {
 
 function mapState ({ app, searchOptions, tweets }) {
   return {
+    ascending: searchOptions.ascending,
     loadedLatest: app.loadedLatestTweets,
     loadedCached: app.loadedCachedTweets,
     tweets: tweets
