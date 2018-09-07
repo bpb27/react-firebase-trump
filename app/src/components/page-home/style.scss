@@ -4,14 +4,16 @@
     text-align: center;
 
     h1 {
-      background: #ff6f6f;
+      background: #ff6161;
       border-bottom: 2px solid black;
       color: black;
-      font-size: 20px;
+      font-size: 24px;
       letter-spacing: 3px;
       margin: 0;
       padding: 10px;
-      text-transform: uppercase;
+      font-family: monospace;
+      font-weight: 900;
+      text-align: center;
     }
 
   }

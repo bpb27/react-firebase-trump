@@ -17,6 +17,9 @@ class PageSearch extends Component {
     ascending: PropTypes.bool.isRequired,
     fetchAccounts: PropTypes.func.isRequired,
     fetchTweets: PropTypes.func.isRequired,
+    hour: PropTypes.string.isRequired,
+    sortBy: PropTypes.string.isRequired,
+    source: PropTypes.string.isRequired,
     tweets: PropTypes.array.isRequired,
   }
 
@@ -41,7 +44,9 @@ class PageSearch extends Component {
 
   get queryList () {
     const {deepQuery, query} = this.state;
-    if (Object.keys(deepQuery).length > 0) {
+    const hasDeepQuery = !!Object.keys(deepQuery).length;
+
+    if (hasDeepQuery) {
       return [...deepQuery.and, ...deepQuery.or];
     } else if (query) {
       return [query];
@@ -51,23 +56,25 @@ class PageSearch extends Component {
   }
 
   get tweets () {
-    const tweets = queryTweets(this.props.tweets, this.state.query, this.state.deepQuery);
+    const { hour, source } = this.props;
+    const sorter = (a, b) => a[this.props.sortBy] - b[this.props.sortBy];
+    const filter = (tweet) => {
+      if (source && tweet.source !== source) return false;
+      return true;
+    }
+
+    const tweets = queryTweets(this.props.tweets, this.state.query, this.state.deepQuery).filter(filter);
+    if (this.props.sortBy !== 'created_at') tweets.sort(sorter);
     return this.props.ascending ? tweets.reverse() : tweets;
   }
 
-  get count () {
-    if (!this.state.query) {
-      return this.props.tweets.length;
-    } else {
-      return this.tweets.length;
-    }
-  }
-
   render () {
+    const tweets = this.tweets;
+
     return (
       <div className="page page-search">
         <Query
-          count={this.count}
+          count={tweets.length}
           updateQuery={value => this.updateQuery(value)}
         />
         <SearchOptions/>
@@ -89,8 +96,11 @@ class PageSearch extends Component {
 function mapState ({ app, searchOptions, tweets }) {
   return {
     ascending: searchOptions.ascending,
+    hour: searchOptions.hour,
     loadedLatest: app.loadedLatestTweets,
     loadedCached: app.loadedCachedTweets,
+    sortBy: searchOptions.sortBy,
+    source: searchOptions.source,
     tweets: tweets
   };
 }

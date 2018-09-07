@@ -1,5 +1,4 @@
 export default [
-  'Any time',
   '12:00am',
   '1:00am',
   '2:00am',
